@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Shell Shockers Valorant Sensitivity
-// @version      1.0.0
+// @version      1.0.1
 // @description  Play Shell Shockers with your Valorant sensitivity: type it in, or read it straight from Valorant's settings, and the mouse turns exactly as far as it does in Valorant, aiming down sights and scoped too.
 // @namespace    https://github.com/Virojet
 // @author       Virojet
@@ -100,7 +100,7 @@
   "use strict";
   if (window.ssValorantSens) return;   // already running: Tampermonkey and the Mod Menu both started it
 
-  const VERSION = "1.0.0";
+  const VERSION = "1.0.1";
   const STORE = "ssValorantSens";
   // Valorant turns 0.07° per mouse count at sensitivity 1, Shell Shockers Mouse Speed² × 0.000001 radians.
   const K = 0.07 * Math.PI / 180 * 1e6;   // 1221.73…: the Mouse Speed² that turns as far as Valorant's 1
@@ -600,4 +600,18 @@
     description: "Your Valorant sensitivity in Shell Shockers, typed or read from Valorant, aiming and scoped too.",
     enable: start, disable: stop, openSettings,
   });
+
+  // install-counter:begin
+  // Install counter: one anonymous hit per browser, sent once and never again (key "ssValorantSens-install-counted").
+  // Nothing is sent but the hit itself: no settings, names or IDs. Total: abacus.jasoncameron.dev/get/virojet-valorant-sensitivity/installs
+  (() => {
+    const KEY = "ssValorantSens-install-counted";
+    try { if (localStorage.getItem(KEY)) return; } catch (e) { return; }
+    setTimeout(() => {
+      fetch("https://abacus.jasoncameron.dev/hit/virojet-valorant-sensitivity/installs", { credentials: "omit", referrerPolicy: "no-referrer" })
+        .then(r => { if (r.ok) localStorage.setItem(KEY, "1"); })
+        .catch(() => { });
+    }, 8000);
+  })();
+  // install-counter:end
 })();

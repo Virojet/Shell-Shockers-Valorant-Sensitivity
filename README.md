@@ -8,8 +8,9 @@
 
 [![Install Valorant Sensitivity](https://img.shields.io/badge/Install_Valorant_Sensitivity-one_click-2ea44f?style=for-the-badge&logo=tampermonkey&logoColor=white)](https://raw.githubusercontent.com/Virojet/Shell-Shockers-Valorant-Sensitivity/main/Shell-Shockers-Valorant-Sensitivity.user.js)
 
-[![Version](https://img.shields.io/badge/version-1.0.0-0E7697?style=flat-square)](./Shell-Shockers-Valorant-Sensitivity.user.js)
+[![Version](https://img.shields.io/badge/version-1.0.1-0E7697?style=flat-square)](./Shell-Shockers-Valorant-Sensitivity.user.js)
 [![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square)](./LICENSE)
+[![Installs](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fabacus.jasoncameron.dev%2Fget%2Fvirojet-valorant-sensitivity%2Finstalls&query=%24.value&label=installs&color=2ea44f&style=flat-square)](#privacy)
 
 </div>
 
@@ -48,7 +49,7 @@ Or drag that folder, or a `RiotUserSettings.ini` file from it, onto the Settings
 
 The line under the settings says what it got. Hover over it to see your sensitivity and multipliers as Valorant saved them, and when. With several accounts, it takes the one you played last, which Valorant notes, or else the one whose settings changed last.
 
-Your files stay on your computer. Your browser calls it an upload, but the files are only read in the page, and nothing is sent anywhere. The script reads two files, `RiotUserSettings.ini` and `RiotLocalMachine.ini`, and never changes them.
+Your files stay on your computer. Your browser calls it an upload, but the files are only read in the page, and nothing from them is sent anywhere. The script reads two files, `RiotUserSettings.ini` and `RiotLocalMachine.ini`, and never changes them.
 
 ## How exact is it?
 
@@ -100,6 +101,21 @@ Switch the script off in Tampermonkey and reload the game. Aiming goes back to t
 
 > [!NOTE]
 > Shell Shockers Valorant Sensitivity isn't endorsed or sponsored by Riot Games. Valorant is a trademark of Riot Games, Inc. The script uses nothing of Riot's: it reads your own Valorant settings files, on your computer, when you ask it to.
+
+## Privacy
+
+- **Install count:** the first time it runs, one anonymous hit goes to a public counter ([Abacus](https://abacus.jasoncameron.dev)) so the installs badge above stays current. No settings, files, names or IDs. It's sent once per browser; the `ssValorantSens-install-counted` key in site storage remembers it.
+- **Your Valorant files** are read in your browser when you pick them and are never sent anywhere.
+
+## Changelog
+
+#### v1.0.1 — current
+
+- **Install count:** an anonymous count of how many browsers run Valorant Sensitivity, so the installs badge above can show it. See [Privacy](#privacy). Nothing else changed.
+
+#### v1.0.0
+
+- First release: your Valorant sensitivity in Shell Shockers, typed in or read from Valorant, from the hip, aiming down sights and scoped.
 
 ## License
 
